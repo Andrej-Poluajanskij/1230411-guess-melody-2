@@ -5,10 +5,9 @@ import App from './App';
 
 
 const init = () => {
-    ReactDOM.render(
+  ReactDOM.render(
       <App />,
       document.querySelector(`#root`)
-    );
-  };
-  
-  init();
+  );
+};
+init();
