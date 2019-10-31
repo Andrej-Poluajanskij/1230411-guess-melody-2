@@ -21,10 +21,11 @@ const MainPage = (props) => {
   );
 };
 
+
 MainPage.propTypes = {
-  gameTime: PropTypes.number,
-  errorCount: PropTypes.number,
-  clickHandler: PropTypes.func
+  gameTime: PropTypes.number.isRequired,
+  errorCount: PropTypes.number.isRequired,
+  clickHandler: PropTypes.func.isRequired
 };
 
 export default MainPage;
