@@ -6,9 +6,10 @@ import App from './app';
 it(`App correctly renders after relaunch`, () => {
   const tree = renderer
       .create(<App
-        gameTime={7}
-        errorCount={4}
+        gameTime={5}
+        errorCount={3}
         clickHandler={jest.fn()}
+        questions={{}}
       />)
         .toJSON();
 

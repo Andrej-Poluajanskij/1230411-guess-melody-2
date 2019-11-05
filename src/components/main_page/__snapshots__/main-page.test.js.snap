@@ -39,12 +39,12 @@ exports[`MainPage correctly renders after relaunch 1`] = `
   >
     <li>
       За 
-      7
+      5
        минут нужно ответить на все вопросы.
     </li>
     <li>
       Можно допустить 
-      4
+      3
        ошибки.
     </li>
   </ul>
