@@ -8,7 +8,7 @@ Enzyme.configure({adapter: new Adapter()});
 it(`GenreQuestionPage is correctly rendered after e2e test`, () => {
   const submitTest = jest.fn();
   const genreQuestionPage = shallow(<GenreQuestionPage
-    question={{answers: [], genre: ``}}
+    question={{answers: [`answer-rock`], genre: ``}}
     screenIndex={0}
     onAnswer={submitTest}
   />);
@@ -17,5 +17,8 @@ it(`GenreQuestionPage is correctly rendered after e2e test`, () => {
   const submit = genreQuestionPage.find(`form.game__tracks`);
   submit.simulate(`submit`, {preventDefault: () => {}});
 
-  expect(submitTest).toHaveBeenCalledTimes(1);
+  const input = genreQuestionPage.find(`input.game__input`);
+  input.simulate(`change`, {target: {value: `answer-rock`}});
+
+  expect(submitTest).toHaveBeenCalledTimes(1).toHaveBeenCalledWith([`answer-rock`]);
 });

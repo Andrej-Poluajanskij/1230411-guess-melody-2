@@ -83,7 +83,7 @@ exports[`ArtistQuestionPage correctly renders after relaunch 1`] = `
     </div>
     <form
       className="game__artist"
-      onChange={[MockFunction]}
+      onChange={[Function]}
     />
   </section>
 </section>

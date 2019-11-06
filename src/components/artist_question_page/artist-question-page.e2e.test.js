@@ -8,7 +8,7 @@ Enzyme.configure({adapter: new Adapter()});
 it(`ArtistQuestionPage is correctly rendered after e2e test`, () => {
   const changeTest = jest.fn();
   const artistQuestionPage = shallow(<ArtistQuestionPage
-    question={{answers: []}}
+    question={{answers: [`answer-Jim Beam`]}}
     screenIndex={1}
     onAnswer={changeTest}
   />);
@@ -17,5 +17,8 @@ it(`ArtistQuestionPage is correctly rendered after e2e test`, () => {
   const change = artistQuestionPage.find(`form.game__artist`);
   change.simulate(`change`);
 
-  expect(changeTest).toHaveBeenCalledTimes(1);
+  const input = artistQuestionPage.find(`input.artist__input`);
+  input.simulate(`change`, {target: {value: `answer-Jim Beam`}});
+
+  expect(changeTest).toHaveBeenCalledTimes(1).toHaveBeenCalledWith([`answer-Jim Beam`]);
 });

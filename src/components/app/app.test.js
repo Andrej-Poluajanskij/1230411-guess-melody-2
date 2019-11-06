@@ -9,7 +9,7 @@ it(`App correctly renders after relaunch`, () => {
         gameTime={5}
         errorCount={3}
         clickHandler={jest.fn()}
-        questions={{}}
+        questions={[]}
       />)
         .toJSON();
 

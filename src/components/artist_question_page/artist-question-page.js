@@ -37,12 +37,13 @@ const ArtistQuestionPage = ({question, screenIndex, onAnswer}) => {
           </div>
         </div>
 
-        <form className="game__artist" onChange={onAnswer}>
+        <form className="game__artist" onChange={(evt) => onAnswer(evt.target.value)}>
+
           {answers.map((item, i) => {
             return (
               <div className="artist" key={`${screenIndex}-answer-${i}`}>
                 <input className="artist__input visually-hidden" type="radio" name="answer"
-                  value={`answer-${i}`} id={`answer-${i}`}/>
+                  value={`answer-${item.artist}`} id={`answer-${i}`}/>
                 <label className="artist__name" htmlFor={`answer-${i}`}>
                   <img className="artist__picture" src={item.picture} alt={item.artist}/>
                   {item.artist}

@@ -30,7 +30,8 @@ const GenreQuestionPage = ({question, screenIndex, onAnswer}) => {
         <h2 className="game__title">Выберите {genre} треки</h2>
         <form className="game__tracks" onSubmit={(evt) => {
           evt.preventDefault();
-          onAnswer();
+          onAnswer(new FormData(evt.target).getAll(`answer`));
+
         }}>
           {answers.map((item, i) => {
             return (
@@ -40,7 +41,7 @@ const GenreQuestionPage = ({question, screenIndex, onAnswer}) => {
                   <audio/>
                 </div>
                 <div className="game__answer">
-                  <input className="game__input visually-hidden" type="checkbox" name="answer" value={`answer-${i}`} id={`answer-${i}`}/>
+                  <input className="game__input visually-hidden" type="checkbox" name="answer" value={`answer-${item.genre}`} id={`answer-${i}`}/>
                   <label className="game__check" htmlFor={`answer-${i}`} >Отметить</label>
                 </div>
               </div>

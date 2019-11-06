@@ -64,6 +64,14 @@ const questions = [
       },
     ],
   },
+  {
+    type: `settings`,
+    settings:
+      {
+        gameTime: 5,
+        errorCount: 3,
+      }
+  },
 ];
 
 export default questions;
