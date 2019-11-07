@@ -20,5 +20,6 @@ it(`ArtistQuestionPage is correctly rendered after e2e test`, () => {
   const input = artistQuestionPage.find(`input.artist__input`);
   input.simulate(`change`, {target: {value: `answer-Jim Beam`}});
 
-  expect(changeTest).toHaveBeenCalledTimes(1).toHaveBeenCalledWith([`answer-Jim Beam`]);
+  expect(changeTest).toHaveBeenCalledTimes(1);
+  expect(changeTest).toHaveBeenCalledWith(`answer-Jim Beam`);
 });

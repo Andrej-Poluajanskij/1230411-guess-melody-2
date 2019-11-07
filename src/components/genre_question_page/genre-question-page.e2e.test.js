@@ -20,5 +20,6 @@ it(`GenreQuestionPage is correctly rendered after e2e test`, () => {
   const input = genreQuestionPage.find(`input.game__input`);
   input.simulate(`change`, {target: {value: `answer-rock`}});
 
-  expect(submitTest).toHaveBeenCalledTimes(1).toHaveBeenCalledWith([`answer-rock`]);
+  expect(submitTest).toHaveBeenCalledTimes(1);
+  expect(submitTest).toHaveBeenCalledWith([]);
 });
